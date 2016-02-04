@@ -4,42 +4,43 @@ html(lang="en")
     link(rel="stylesheet" href="./../css/styles.css")
     title
   body
-    .singlePageWrapper.wholeGalleryWrapper
+    .wholeGalleryWrapper
       .mainHeader
         h1 HEADER
 
-      .mainPhotoWrapper
-        .photoTitle.textStyle
-          h4 #{gallery.title}
-          .textLink
-            p #{gallery.link}
-        img.singleImage(src='#{gallery.link}')
+      .featureNthumbs
+        .mainPhotoWrapper
+          .photoTitle.textStyle
+            h4 #{gallery.title}
+            .textLink
+              p #{gallery.link}
+            img.singleImage(src='#{gallery.link}')
 
-      .buttonBar
-        if user.id === gallery.UserId
-          .singlePageButtons
+          .buttonBar
+            if user.id === gallery.UserId
+              .editNdeletBtn
 
-            form(method="GET", action="/gallery/#{gallery.id}/edit")
-              button.editButton(type="submit", value="submit") edit
+                form(method="GET", action="/gallery/#{gallery.id}/edit")
+                  button.singleButtonStyle(type="submit", value="submit") edit
 
-            form(name="delete-photo", method="POST", action="/gallery/#{gallery.id}")
-              input(type="hidden", name="_method", value="DELETE")
-              button.deleteButton(type="submit", value="submit") delete
+                form(name="delete-photo", method="POST", action="/gallery/#{gallery.id}")
+                  input(type="hidden", name="_method", value="DELETE")
+                  button.singleButtonStyle(type="submit", value="submit") delete
 
-        form(method="GET", action="/gallery")
-          button.backButton(type="submit", value="submit") back
+            form(method="GET", action="/gallery")
+              button.singleButtonStyle(type="submit", value="submit") back
 
 
-        .singlePhotoPar
-          p #{gallery.description}
+          .singlePhotoPar
+            p #{gallery.description}
 
         //- each photo in gallery
 
-      .thumbWrapper
-        each thumb in thumbs
-          .eachPhotoContent
-            //- h4 #{thumb.title}
+        .thumbWrapper
+          each thumb in thumbs
+            .eachPhotoContent
+              //- h4 #{thumb.title}
 
-            //every photo that gets uploaded
-            //- a(href='/#{thumb.id}')
-            img.uploadedPhoto(src='#{thumb.link}')
+              //every photo that gets uploaded
+              //- a(href='/#{thumb.id}')
+              img.uploadedPhoto(src='#{thumb.link}')
