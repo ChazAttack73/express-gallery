@@ -4,14 +4,14 @@ html(lang="en")
     link(rel="stylesheet" href="/css/styles.css")
     title
   body
-    div.formWrapper
+    .formWrapper
       form(name="new_photo", method="POST", action="/gallery")
         input(type="hidden", name="_method", placeholder="POST")
         div.inputTextName Title&nbsp
           input(type="text", name="title", placeholder="Enter Title" autofocus)
-        div.inputTextName Link&nbsp
+        .inputTextName Link&nbsp
           input(type="text", name="link", placeholder="Enter URL")
-        div.inputTextName Description&nbsp
+        .inputTextName Description&nbsp
           input(type="text", name="description", placeholder="Description of photo")
-        div
+
           input.submitButton(type="submit" name="submit" value="Submit")

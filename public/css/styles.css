@@ -200,6 +200,8 @@ body {
   border: 8px double #9dcca6; }
 
 .formWrapper {
+  border: 2px solid black;
+  padding: 5%;
   background: #9dcca6;
   background-image: -webkit-linear-gradient(top, #9dcca6, #e1ede5);
   background-image: -moz-linear-gradient(top, #9dcca6, #e1ede5);
@@ -249,14 +251,11 @@ div.inputTextName {
 
 .singleImage {
   box-shadow: 2px 2px 20px 2px #666666;
-  border: solid white;
   width: 100%; }
 
-.singlePageButtons {
-  background-color: blue;
+.editNdeletBtn {
   display: flex;
-  flex-flow: row nowrap;
-  padding: 5%; }
+  flex-flow: row nowrap; }
 
 .singlePhotoPar {
   box-shadow: 0px 5px 10px #666666;
@@ -268,9 +267,11 @@ div.inputTextName {
   font-size: 18px; }
 
 .buttonBar {
-  background-color: green; }
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1% 0% 5% 0%; }
 
-.editButton {
+.singleButtonStyle {
   height: 30px;
   width: 100px;
   background: #9dcca6;
@@ -281,7 +282,7 @@ div.inputTextName {
   background-image: linear-gradient(to bottom, #9dcca6, #e1ede5);
   -webkit-border-radius: 15;
   -moz-border-radius: 15;
-  border-radius: 15px;
+  border-radius: 10px;
   text-shadow: 1px 1px 3px #666666;
   -webkit-box-shadow: 0px 1px 10px #666666;
   -moz-box-shadow: 0px 1px 10px #666666;
@@ -296,54 +297,8 @@ div.inputTextName {
 .editButton:hover {
   color: #9dcca6; }
 
-.deleteButton {
-  height: 30px;
-  width: 100px;
-  background: #9dcca6;
-  background-image: -webkit-linear-gradient(top, #9dcca6, #e1ede5);
-  background-image: -moz-linear-gradient(top, #9dcca6, #e1ede5);
-  background-image: -ms-linear-gradient(top, #9dcca6, #e1ede5);
-  background-image: -o-linear-gradient(top, #9dcca6, #e1ede5);
-  background-image: linear-gradient(to bottom, #9dcca6, #e1ede5);
-  -webkit-border-radius: 15;
-  -moz-border-radius: 15;
-  border-radius: 15px;
-  text-shadow: 1px 1px 3px #666666;
-  -webkit-box-shadow: 0px 1px 10px #666666;
-  -moz-box-shadow: 0px 1px 10px #666666;
-  box-shadow: 0px 1px 10px #666666;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 15px;
-  text-align: center;
-  text-decoration: none;
-  flex-grow: 1; }
-
 .deleteButton:hover {
   color: #9dcca6; }
-
-.backButton {
-  height: 30px;
-  width: 100px;
-  background: #9dcca6;
-  background-image: -webkit-linear-gradient(top, #9dcca6, #e1ede5);
-  background-image: -moz-linear-gradient(top, #9dcca6, #e1ede5);
-  background-image: -ms-linear-gradient(top, #9dcca6, #e1ede5);
-  background-image: -o-linear-gradient(top, #9dcca6, #e1ede5);
-  background-image: linear-gradient(to bottom, #9dcca6, #e1ede5);
-  -webkit-border-radius: 15;
-  -moz-border-radius: 15;
-  border-radius: 15px;
-  text-shadow: 1px 1px 3px #666666;
-  -webkit-box-shadow: 0px 1px 10px #666666;
-  -moz-box-shadow: 0px 1px 10px #666666;
-  box-shadow: 0px 1px 10px #666666;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 15px;
-  text-align: center;
-  text-decoration: none;
-  flex-grow: 1; }
 
 .backButton:hover {
   color: #9dcca6; }
@@ -352,21 +307,26 @@ div.inputTextName {
   display: none; }
   @media only screen and (min-width: 600px) {
     .thumbWrapper {
-      background-color: green;
       display: block;
-      padding-top: 0px;
-      margin-top: 10%; } }
+      padding: 3%;
+      height: 1000px;
+      width: 550px;
+      overflow-x: hidden; }
+      .thumbWrapper ::-webkit-scrollbar-track {
+        background-color: #b46868; } }
 
 .mainPhotoWrapper {
-  background-color: pink;
   padding-right: 5%;
   padding-left: 5%; }
 
 @media only screen and (min-width: 600px) {
   .textWrap {
     padding: 5%; }
-  .singlePageWrapper {
-    border: 3px solid black;
-    display: flex; }
+  .featureNthumbs {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 5%; }
   .mainPhotoWrapper {
-    margin: 5% 0% 5% 5%; } }
+    flex-flow: row wrap;
+    padding: 5% 0% 5% 0%;
+    width: 100%; } }
